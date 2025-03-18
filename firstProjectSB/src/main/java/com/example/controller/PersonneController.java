@@ -15,9 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Personne;
 import com.example.service.PersonneService;
-import com.mysql.cj.protocol.x.XProtocolError;
 
-@Controller
+@RestController
 public class PersonneController {
 
 	@Autowired
@@ -47,6 +46,15 @@ public class PersonneController {
 		personneService.update(personne, id);
 	}
 
+	
+	/**
+	 * {
+    "nom": "Dupond",
+    "prenom": "Jean",
+    "birthday": "1990-01-01"
+		}
+	 */
+	 
 	@PostMapping("/addPersonne")
 	public boolean addPersonne(@RequestBody Personne personne) {
 		personneService.addPersonne(personne);

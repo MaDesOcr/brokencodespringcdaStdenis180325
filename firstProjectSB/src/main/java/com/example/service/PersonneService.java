@@ -11,7 +11,6 @@ import com.example.repository.PersonneRepository;
 
 @Service
 public class PersonneService {
-
 	
 	@Autowired
 	PersonneRepository personneRepository;

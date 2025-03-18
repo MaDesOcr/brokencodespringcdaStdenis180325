@@ -1,7 +1,6 @@
 package com.example.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -11,14 +10,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Model
+@Entity
 public class Personne {
 	
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	long id;
+	private long id;
 	
-	String nom;
-	String prenom;
+	private String nom;
+	private String prenom;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate birthday;
